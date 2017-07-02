@@ -1,0 +1,70 @@
+
+
+{% extends 'produit/base.html' %}
+{% block title %}All produuits{% endblock %}
+{% block songs_active %}active{% endblock %}
+
+{% block body %}
+<div class="container-fluid songs-container">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <ul class="nav nav-pills" style="margin-bottom: 10px;">
+                <li role="presentation" {% if filter_by == 'all' %}class="active"{% endif %}><a href="{% url 'boutique:produits' 'all' %}">View All</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-12">
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                        <tbody>
+
+                            {% for produit in produit_list %}
+
+
+                                 <div class="col-sm-8 col-lg-3">
+                                    <div class="thumbnail">
+                                            <a href="{% url 'boutique:detail_produit' produit.id %}">
+                                                <img src="{{ produit.logo.url }}"  style="width:500px;height:200px;" class="img-responsive">
+                                            </a>
+                                            <div class="caption">
+                                                <h2>{{ produit.name }}</h2>
+
+
+                                                <!-- View Details -->
+                                                <a href="{% url 'boutique:detail_produit' produit.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
+
+
+                                                <!-- Delete Album -->
+
+
+                                                <!-- Favorite Album -->
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                <!--  tableux  ----------------->
+
+
+                            {% endfor %}
+                        </tbody>
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

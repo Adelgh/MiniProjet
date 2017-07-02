@@ -1,0 +1,39 @@
+body{
+	background: white url("images/back.jpg");
+}
+
+
+.navbar{
+
+    border-radius: 0;
+
+}
+
+.navbar-inverse {
+     background-color: #401200;
+     border-color: #080808;
+}
+
+.navbar-brand{
+    font-family: 'satisfy', cursive;
+
+}
+
+.glyphicon-heart {
+    color: #CCCCCC;
+    font-size: 16px;
+}
+
+.glyphicon-heart.active {
+    color: #ac0502;
+}
+
+.myclass {
+     color: #CCCCCC;
+    font-size: 16px;
+}
+
+.myclass.active {
+    color: #ac0502;
+
+}

@@ -1,0 +1,52 @@
+{% extends 'produit/base.html' %}
+
+{% block title %}Tous les produuits{% endblock %}
+{% block songs_active %}active{% endblock %}
+<div class="col-sm-offset-1 ">
+{% block pagination %}
+
+{% block body %}
+    <div class="container-fluid Produits-container">
+    {% for produit in produits %}
+
+
+
+
+
+                                 <div class="col-sm-2 col-lg-4">
+                                    <div class="thumbnail">
+
+                                                <img src="{{ produit.logo.url }}"  style="width:500px;height:200px;" class="img-responsive">
+                                    <div>{{ produit.title }}</div>
+
+
+                                            <div class="caption">
+
+
+
+<!--<input type="checkbox" checked data-toggle="toggle" data-on="Ready" data-off="Not Ready" data-onstyle="success" data-offstyle="danger"> -->
+ {% if produit.etat == "active" %}
+<a href="{% url 'boutique:desactiver' produit.id %}" > <input type="button" value="Activer"> </a>
+     {% else %}
+<a href="{% url 'boutique:activer' produit.id %}" > <input type="button" value="Desactiver"> </a>
+     <a href="{% url 'boutique:detail_produit' produit.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
+{% endif %}
+          <a href="{% url 'boutique:favorite' produit.id %}" class="btn-favorite"><span class="glyphicon glyphicon-heart {% if produit.is_favorite %}active{% endif %}"></span></a>
+
+
+                                                <!-- Delete Album -->
+
+
+                                                <!-- Favorite Album -->
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+    {% endfor %}
+{% include "produit/pagination.html" with page=produits %}
+    </div>
+  </div>
+{% endblock %}
+{% endblock %}

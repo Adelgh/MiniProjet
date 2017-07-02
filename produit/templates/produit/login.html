@@ -1,0 +1,51 @@
+{% extends 'produit/base_visitor.html' %}
+{% block body %}
+    <div class="login-box">
+        <div class="lb-header">
+            <a href="{% url 'boutique:login_user' %}" class="active" id="login-box-link">Login</a>
+            <a href="{% url 'boutique:register' %}" id="signup-box-link">Sign Up</a>
+        </div>
+    <div class="social-login">
+      <a href="#">
+        <i class="fa fa-facebook fa-lg"></i>
+        Login in with facebook
+      </a>
+      <a href="#">
+        <i class="fa fa-google-plus fa-lg"></i>
+        log in with Google
+      </a>
+    </div>
+   <form class="email-login"  action="{% url 'boutique:login_user'%}" method="post" enctype="multipart/form-data">
+       {% csrf_token %}
+       <div class="u-form-group">
+           <div class="col-sm-10">
+           <input  maxlength="30"  name="username" type="text" placeholder="username">
+               <br>
+               <br>
+       </div>
+       </div>
+
+
+       <div class="u-form-group">
+
+        <div class="col-sm-10">
+
+            <input  maxlength="30" placeholder="password" name="password" type="password">
+            <br>
+               <br>
+        </div>
+       </div>
+        <div class="u-form-group">
+
+            <div class="col-sm-offset-1 col-sm-8">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </div>
+
+    </form>
+
+
+  </div>
+
+
+{% endblock %}
