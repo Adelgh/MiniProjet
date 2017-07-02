@@ -18,6 +18,7 @@ urlpatterns=[
     url(r'^(?P<boutique_id>[0-9]+)/delete_produit/(?P<produit_id>[0-9]+)/$', views.delete_produit, name='delete_produit'),
     url(r'^(?P<boutique_id>[0-9]+)/$', views.detail, name='detail'),
     url(r'^(?P<produit_id>[0-9]+)/favorite/$', views.favorite, name='favorite'),
+    url(r'^(?P<produit_id>[0-9]+)/smile/$', views.smile, name='smile'),
     url(r'^(?P<boutique_id>[0-9]+)/delete_boutique/$', views.delete_boutique, name='delete_boutique'),
     url(r'^vosproduit/(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail_produit'),
     url(r'^activer/(?P<produit_id>[0-9]+)/$', views.Activer, name='activer'),

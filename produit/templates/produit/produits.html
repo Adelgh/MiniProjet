@@ -31,7 +31,8 @@
 <a href="{% url 'boutique:activer' produit.id %}" > <input type="button" value="Desactiver"> </a>
      <a href="{% url 'boutique:detail_produit' produit.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
 {% endif %}
-          <a href="{% url 'boutique:favorite' produit.id %}" class="btn-favorite"><span class="glyphicon glyphicon-heart {% if produit.is_favorite %}active{% endif %}"></span></a>
+          <a href="{% url 'boutique:favorite' produit.id %}" class="btn-favorite"><span class="glyphicon glyphicon-heart {% if produit.is_favorite %}active{%else%}not{% endif %}"></span></a>
+           <a href="{% url 'boutique:smile' produit.id %}" class="btn-favorite"><span class="fa fa-smile-o {% if produit.is_smile %}active{% endif %}"></span></a>
 
 
                                                 <!-- Delete Album -->

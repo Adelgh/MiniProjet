@@ -21,19 +21,23 @@ body{
 
 .glyphicon-heart {
     color: #CCCCCC;
-    font-size: 16px;
+    font-size: 25px;
 }
 
 .glyphicon-heart.active {
     color: #ac0502;
 }
 
-.myclass {
-     color: #CCCCCC;
-    font-size: 16px;
+.fa-smile-o{
+    color: #080808;
+    font-size: 30px;
 }
 
-.myclass.active {
-    color: #ac0502;
+.fa-smile-o.active {
+        size: 20px;
+        font-size: 30px;
+        color: #ff3b25;
 
 }
+
+

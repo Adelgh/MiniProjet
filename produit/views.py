@@ -4,7 +4,8 @@ from .forms import BoutiqueForm, UserForm, ProduitForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.http import JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
@@ -223,13 +224,13 @@ def Categorie(request):
     })
 
 def favorite(request, produit_id):
-    song = get_object_or_404(Produit, pk=produit_id)
+    variable = get_object_or_404(Produit, pk=produit_id)
     try:
-        if song.is_favorite:
-            song.is_favorite = False
+        if variable.is_favorite:
+            variable.is_favorite = False
         else:
-            song.is_favorite = True
-        song.save()
+            variable.is_favorite = True
+            variable.save()
     except (KeyError, Produit.DoesNotExist):
         return JsonResponse({'success':False})
     else:
@@ -237,6 +238,18 @@ def favorite(request, produit_id):
 
 
 
+def smile(request, produit_id):
+    produit = get_object_or_404(Produit, pk=produit_id)
+    try:
+        if produit.is_smile:
+            produit.is_smile = False
+        else:
+            produit.is_smile = True
+            produit.save()
+    except (KeyError, Produit.DoesNotExist):
+        return JsonResponse({'success':False})
+    else:
+        return JsonResponse({'success':True})
 
 
 

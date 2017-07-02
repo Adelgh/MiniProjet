@@ -1,4 +1,3 @@
-
 var ProduitsListPage = {
 	init: function() {
 		this.$container = $('.Produits-container');
@@ -38,18 +37,16 @@ var ProduitsListPage1 = {
 	},
 
 	bindEvents: function() {
-		$('.myclass', this.$container).on('click', function(e) {
+		$('.btn-favorite', this.$container).on('click', function(e) {
 			e.preventDefault();
 
 			var self = $(this);
 			var url = $(this).attr('href');
 			$.getJSON(url, function(result) {
 				if (result.success) {
-					$('.myclass', self).toggleClass('active');
+					$('.fa-smile-o', self).toggleClass('active');
 				}
-				else if(result.failure){
-					$('.myclass', self).toggleClass('desactive');
-				}
+
 			});
 
 			return false;

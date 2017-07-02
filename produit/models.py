@@ -37,6 +37,7 @@ class Produit(models.Model):
     image3 = models.ImageField(upload_to=group_based_upload_to_seconder, default=None)
     categorie = models.CharField(max_length=250, choices=choix_categorie, default="bijoux")
     is_favorite = models.BooleanField(default=False)
+    is_smile = models.BooleanField(default=False)
 
 
 
